@@ -1,22 +1,47 @@
 #include <SFML/Graphics.hpp>
-
+#include "components/Button.h"
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode(600, 600), "It's WIN!");
+    //--------
+    Button buttonRadio;
+
+    std::vector<std::string> texturesPath = {
+        "assets/Radio1.png",
+        "assets/Radio2.png",
+        "assets/Radio3.png",
+        "assets/Radio4.png"};
+    
+    if (!buttonRadio.loadTextures(texturesPath)) return -1;
+
+    buttonRadio.setPosition(200, 200);
+    buttonRadio.setScale(5);
 
     while (window.isOpen())
     {
+        
         sf::Event event;
-        while (window.pollEvent(event))
+        //--------------------------------------
+        while (window.pollEvent(event)) 
         {
             if (event.type == sf::Event::Closed)
                 window.close();
-        }
 
-        window.clear();
-        window.draw(shape);
+            if (event.type == sf::Event::MouseButtonPressed) 
+                if (event.mouseButton.button == sf::Mouse::Left) {
+                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+                    if (buttonRadio.contains(mousePos)) buttonRadio.onClick();
+                }
+            
+        }//«¿ –€¬¿≈Ã—ﬂ
+        //--------------------------------------
+        
+
+
+        window.clear(sf::Color(30,30,30));
+
+        buttonRadio.draw(window);
+
         window.display();
     }
 

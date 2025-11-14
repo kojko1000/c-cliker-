@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Button.h",
+              "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.h",
+              "RelativeDocumentMoniker": "components\\Button.h",
+              "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.h",
+              "RelativeToolTip": "components\\Button.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-14T13:57:21.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Button.cpp",
+              "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.cpp",
+              "RelativeDocumentMoniker": "components\\Button.cpp",
+              "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.cpp",
+              "RelativeToolTip": "components\\Button.cpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-14T11:47:52.363Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-13T12:58:15.96Z",
               "EditorCaption": ""
