@@ -14,6 +14,7 @@ private:
     sf::Clock shakeTimer;
     float shakeDuration = 0.1;
     float shakeIntensity = 5.0;
+    int clickCount = 0;
 public:
     //инициация
     bool loadTextures(const std::vector<std::string>& paths);
@@ -27,6 +28,7 @@ public:
     //гетеры
     sf::FloatRect getBounds();
     sf::Vector2f getPosition();
+    std::string getClickCount();
     //для тряски-----------
     void startShake();
     void updateShake();

@@ -34,7 +34,7 @@
 		
 
 		sprite.setTexture(textures[state]);
-
+		clickCount++;
 		std::cout << "CLICK!!!"<<std::endl;
 	}
 
@@ -48,6 +48,10 @@
 
 	void Button::setScale(float scale) {
 		Button::sprite.setScale(scale, scale);
+	}
+
+	std::string Button::getClickCount() {
+		return std::to_string(clickCount);
 	}
 
 	//ïğè÷èíà ÒĞßÑÊÈ!
