@@ -6,6 +6,7 @@ int main()
     //--------
     Button buttonRadio;
 
+    float spriteSize = 5;
     std::vector<std::string> texturesPath = {
         "assets/Radio1.png",
         "assets/Radio2.png",
@@ -14,9 +15,10 @@ int main()
     
     if (!buttonRadio.loadTextures(texturesPath)) return -1;
 
-    buttonRadio.setPosition(200, 200);
-    buttonRadio.setScale(5);
-
+    buttonRadio.setPosition((window.getSize().x/2) - (32 * spriteSize) / 2, (window.getSize().y / 2) - (32 * spriteSize) / 2);
+    buttonRadio.setScale(spriteSize);
+    sf::CircleShape sph1 = sf::CircleShape(300.f);
+    sph1.setFillColor(sf::Color::Green);
     while (window.isOpen())
     {
         
@@ -30,18 +32,21 @@ int main()
             if (event.type == sf::Event::MouseButtonPressed) 
                 if (event.mouseButton.button == sf::Mouse::Left) {
                     sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
-                    if (buttonRadio.contains(mousePos)) buttonRadio.onClick();
+                    if (buttonRadio.contains(mousePos)) {
+                        buttonRadio.onClick();
+                        
+                    }
                 }
             
         }//«¿ –€¬¿≈Ã—ﬂ
         //--------------------------------------
         
-
-
+        buttonRadio.updateShake();
+        
         window.clear(sf::Color(30,30,30));
-
+        window.draw(sph1);
         buttonRadio.draw(window);
-
+        
         window.display();
     }
 

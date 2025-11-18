@@ -8,13 +8,26 @@ private:
     std::vector<sf::Texture> textures;
     sf::Sprite sprite;
     int state = 0;
-
+    //для тряски-----------
+    bool isShaking = false;
+    sf::Vector2f originalPos;
+    sf::Clock shakeTimer;
+    float shakeDuration = 0.1;
+    float shakeIntensity = 5.0;
 public:
+    //инициация
     bool loadTextures(const std::vector<std::string>& paths);
-    void setPosition(float x, float y);
     bool contains(sf::Vector2f point);
-    void onClick();
     void draw(sf::RenderWindow& window);
-    sf::FloatRect getBounds();
+    //функции
+    void onClick();
+    //сетеры
     void setScale(float scale);
+    void setPosition(float x, float y);
+    //гетеры
+    sf::FloatRect getBounds();
+    sf::Vector2f getPosition();
+    //для тряски-----------
+    void startShake();
+    void updateShake();
 };

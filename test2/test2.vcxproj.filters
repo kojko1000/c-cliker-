@@ -39,5 +39,8 @@
     <ClInclude Include="components\Button.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="components\Lable.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

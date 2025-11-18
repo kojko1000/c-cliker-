@@ -1,2 +1,5 @@
 ﻿  main.cpp
+D:\c++\проекты\test2\components\Button.h(15,27): warning C4305: инициализация: усечение из "double" в "float"
+  (компиляция исходного файла "main.cpp")
+  
   test2.vcxproj -> D:\c++\проекты\test2\x64\Debug\test2.exe
