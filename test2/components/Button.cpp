@@ -1,61 +1,54 @@
 #include "Button.h"
+#include "GlobalState.h"
 #include <random>
- //загрузка текстур
-	bool Button::loadTextures(const std::vector<std::string>& paths) {
-		for (const std::string path : paths) {
-			sf::Texture texture;
-			if (!texture.loadFromFile(path)){
-				std::cout << "ne"<< path <<std::endl;
-				return false;
-			}
-			textures.push_back(texture);
+ 
+	//________________INIT_______________
+	//загрузка текстур
+	bool Button::loadTextures(const std::vector<std::string>& paths) { 
+	for (const std::string path : paths) {
+		sf::Texture texture;
+		if (!texture.loadFromFile(path)) {
+			std::cout << "ne" << path << std::endl;
+			return false;
 		}
-		if (!textures.empty())
-			sprite.setTexture(textures[0]);
-		
-		return true;
+		textures.push_back(texture);
 	}
-
-	void Button::setPosition(float x, float y){
-		sprite.setPosition(x, y);
+	if (!textures.empty())
+		sprite.setTexture(textures[0]);
+	return true;
 	}
-	sf::Vector2f Button::getPosition() {
-		return sprite.getPosition();
+	//
+	void Button::draw(sf::RenderWindow& window) {
+		window.draw(sprite);
 	}
-
-	bool Button::contains(sf::Vector2f point) {
-		return sprite.getGlobalBounds().contains(point);
-	}
-
+	//
 	void Button::onClick() {
 		if (textures.empty()) return;
 		startShake();
-		state = (state + 1) % textures.size();
-		
 
-		sprite.setTexture(textures[state]);
-		clickCount++;
-		std::cout << "CLICK!!!"<<std::endl;
+		state = state + GlobalState::clickCost;
+		if (state >= textures.size()/texturePack) {
+			state = 0;
+			GlobalState::disassembledCount++;
+		}
+		sprite.setTexture(textures[(int)state*texturePack]);
+		GlobalState::clickCount++;
+		std::cout << "CLICK!!!  " << state <<"     " << (int)state * texturePack << std::endl;
 	}
 
-	void Button::draw(sf::RenderWindow& window){
-		window.draw(sprite);
-	}
+	
+	//_____________GETS__________________
+	sf::FloatRect Button::getBounds()			{return sprite.getGlobalBounds();}
 
-	sf::FloatRect Button::getBounds() {
-		return sprite.getGlobalBounds();
-	}
+	bool Button::contains(sf::Vector2f point)	{return sprite.getGlobalBounds().contains(point);}
 
-	void Button::setScale(float scale) {
-		Button::sprite.setScale(scale, scale);
-	}
+	sf::Vector2f Button::getPosition()			{return sprite.getPosition();}
 
-	std::string Button::getClickCount() {
-		return std::to_string(clickCount);
-	}
+	//_____________SETS__________________
+	void Button::setScale(float scale)			{Button::sprite.setScale(scale, scale);}
 
-	//причина “–я— »!
-
+	void Button::setPosition(float x, float y)	{sprite.setPosition(x, y);}
+	//________причины_“–я— »!___________
 	void Button::startShake() {
 		if (!isShaking) {
 			isShaking = true;

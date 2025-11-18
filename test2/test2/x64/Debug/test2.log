@@ -1,10 +1,8 @@
-﻿  Button.cpp
-D:\c++\проекты\test2\components\Button.h(15,27): warning C4305: инициализация: усечение из "double" в "float"
-  (компиляция исходного файла "components/Button.cpp")
-  
-  main.cpp
-D:\c++\проекты\test2\components\Button.h(15,27): warning C4305: инициализация: усечение из "double" в "float"
+﻿  main.cpp
+D:\c++\проекты\test2\components\Button.h(17,27): warning C4305: инициализация: усечение из "double" в "float"
   (компиляция исходного файла "main.cpp")
   
-  Создание кода...
+D:\c++\проекты\test2\components\Lable.h(63,26): warning C4244: =: преобразование "float" в "sf::Uint8", возможна потеря данных
+  (компиляция исходного файла "main.cpp")
+  
   test2.vcxproj -> D:\c++\проекты\test2\x64\Debug\test2.exe

@@ -7,14 +7,16 @@ class Button {
 private:
     std::vector<sf::Texture> textures;
     sf::Sprite sprite;
-    int state = 0;
-    //для тряски-----------
+    int texturePack = 1;
+    float state = 0;
+
+    //_____для тряски____
     bool isShaking = false;
     sf::Vector2f originalPos;
     sf::Clock shakeTimer;
     float shakeDuration = 0.1;
     float shakeIntensity = 5.0;
-    int clickCount = 0;
+    //
 public:
     //инициация
     bool loadTextures(const std::vector<std::string>& paths);
@@ -23,12 +25,11 @@ public:
     //функции
     void onClick();
     //сетеры
-    void setScale(float scale);
+    void setScale(float scale); 
     void setPosition(float x, float y);
     //гетеры
     sf::FloatRect getBounds();
     sf::Vector2f getPosition();
-    std::string getClickCount();
     //для тряски-----------
     void startShake();
     void updateShake();
