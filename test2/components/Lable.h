@@ -37,7 +37,9 @@ public:
 		text.setPosition((windowWidth - bounds.width) / 2, text.getPosition().y);
 	}
 	//_____________SETS__________
-	void setString(const std::string& str) { text.setString(str); startBlinking(); }
+	void setString(const std::string& str) {
+		if (text.getString() != str){ text.setString(str);startBlinking();}
+	}
 	void setPosition(float x, float y) { text.setPosition(x, y); }
 	void setColor(const sf::Color& color) { text.setFillColor(color); }
 	void setSize(unsigned int size) { text.setCharacterSize(size); }
@@ -50,7 +52,7 @@ public:
 	void startBlinking()
 	{
 			isBlinking = true;
-			blinkLongestTimer.restart();
+			blinkLongestTimer.restart(); 
 	}
 	void update()
 	{

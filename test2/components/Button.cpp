@@ -26,14 +26,17 @@
 		if (textures.empty()) return;
 		startShake();
 
+		if ((int)state!= (int)(state+ GlobalState::clickCost)){std::cout<<"AAAAAAAAAAAA"; }
 		state = state + GlobalState::clickCost;
 		if (state >= textures.size()/texturePack) {
 			state = 0;
 			GlobalState::disassembledCount++;
 		}
+		
 		sprite.setTexture(textures[(int)state*texturePack]);
+		
 		GlobalState::clickCount++;
-		std::cout << "CLICK!!!  " << state <<"     " << (int)state * texturePack << std::endl;
+		//std::cout << "CLICK!!!  " << state <<"     " << (int)state * texturePack << std::endl;
 	}
 
 	
@@ -44,6 +47,7 @@
 
 	sf::Vector2f Button::getPosition()			{return sprite.getPosition();}
 
+	float Button::getState() { return state; }
 	//_____________SETS__________________
 	void Button::setScale(float scale)			{Button::sprite.setScale(scale, scale);}
 

@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\GlobalState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\GlobalState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Lable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -38,20 +38,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GlobalState.h",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\GlobalState.h",
               "RelativeDocumentMoniker": "components\\GlobalState.h",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\GlobalState.h",
               "RelativeToolTip": "components\\GlobalState.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-18T14:03:18.797Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "GlobalState.cpp",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\GlobalState.cpp",
               "RelativeDocumentMoniker": "components\\GlobalState.cpp",
@@ -70,33 +70,33 @@
               "RelativeDocumentMoniker": "components\\Lable.h",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Lable.h",
               "RelativeToolTip": "components\\Lable.h",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADAAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAswEAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-17T06:06:14.75Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Button.h",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.h",
               "RelativeDocumentMoniker": "components\\Button.h",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.h",
               "RelativeToolTip": "components\\Button.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-14T13:57:21.951Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Button.cpp",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.cpp",
               "RelativeDocumentMoniker": "components\\Button.cpp",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.cpp",
               "RelativeToolTip": "components\\Button.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-14T11:47:52.363Z",
               "EditorCaption": ""
@@ -109,7 +109,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADAAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-13T12:58:15.96Z",
               "EditorCaption": ""

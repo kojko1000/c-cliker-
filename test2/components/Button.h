@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 
+
 class Button {
 private:
     std::vector<sf::Texture> textures;
@@ -16,7 +17,9 @@ private:
     sf::Clock shakeTimer;
     float shakeDuration = 0.1;
     float shakeIntensity = 5.0;
-    //
+
+    //типо ивет
+    //ИВЕНТА НЕ БУДЕТ!
 public:
     //инициация
     bool loadTextures(const std::vector<std::string>& paths);
@@ -30,7 +33,10 @@ public:
     //гетеры
     sf::FloatRect getBounds();
     sf::Vector2f getPosition();
+    float getState();
     //для тряски-----------
     void startShake();
     void updateShake();
+    //типо ивет
+    //ИВЕНТА НЕ БУДЕТ!
 };
