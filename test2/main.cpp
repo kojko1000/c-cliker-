@@ -3,18 +3,35 @@
 #include "components/SimpleButton.h"
 #include "components/Lable.h"
 #include "components/GlobalState.h"
+#include <filesystem>
 std::string ProgressConvert(float state);
 
 int main()
 {
-    bool upgraids = false;
     sf::RenderWindow window(sf::VideoMode(600, 600), "It's WIN!");
+    GlobalState::loadFromFile("save.json");
 
+    //---- ШЕЙДЕР ДЛЯ ВСЕГО ОКНА ----
+    sf::Shader windowShader;
+    sf::Clock shaderClock;
+    bool shaderEnabled = true; // Включить/выключить шейдер
+
+    if (!windowShader.loadFromFile("assets/shaders/wave.frag", sf::Shader::Fragment)) {
+        std::cout << "NONONONO afectov ne budet" << std::endl;
+        shaderEnabled = false;
+    }
+    //---- ТЕКСТУРА ДЛЯ РЕНДЕРА ----
+    sf::RenderTexture renderTexture;
+    if (!renderTexture.create(window.getSize().x, window.getSize().y)) {
+        std::cout << "Не удалось создать текстуру рендера!" << std::endl;
+        return -1;
+    }
+    sf::Sprite renderSprite(renderTexture.getTexture());
 
     //----MAIN_BUTTON----
     Button buttonRadio;
 
-    float spriteSize = 5;
+    float spriteSize = 7;
     std::vector<std::string> texturesPath = {
         "assets/Radio1.png",
         "assets/Radio2.png",
@@ -30,17 +47,24 @@ int main()
     buttonRadio.setPosition((window.getSize().x/2) - (32 * spriteSize) / 2, (window.getSize().y / 2) - (32 * spriteSize) / 2);
     buttonRadio.setScale(spriteSize);
     //-----UP_BUTTON_____
-    SimpleButton upButton;
+    bool showUpgrades = false;
+    SimpleButton upgradeButton;
 
-    upButton.loadTextures("assets/ButtonApp/пасивно.png", "assets/ButtonApp/выделено.png", "assets/ButtonApp/нажато.png");//КНОПКУ ПЕРЕДКЛЫВАЕМ
-    upButton.setScale(spriteSize);
-    upButton.setPosition(500, 100);
+    if (!upgradeButton.loadTextures(
+        "assets/ButtonApp/пасивно.png",    // Нормальное состояние
+        "assets/ButtonApp/выделено.png",   // При наведении
+        "assets/ButtonApp/нажато.png"      // При клике
+    )) {return -1;}
+
+    upgradeButton.setPosition(515, 10); // Позиция в правом верхнем углу
+    upgradeButton.setScale(5);
+
 
     //-----TEXT_COUNTER----
     Label text1;
     if (!text1.loadFont("fonts/USSR STENCIL WEBFONT.ttf")) return -1;
     text1.setColor(sf::Color::Green);
-    text1.setString("TK:" + std::to_string(GlobalState::clickCount));
+    text1.setString("TC:" + std::to_string(GlobalState::clickCount));
     text1.setPosition(0, 0);
     text1.startBlinking();
 
@@ -76,47 +100,101 @@ int main()
     //--------GAME_CUCLE---------
     while (window.isOpen())
     {
-        
         sf::Event event;
+        float currentTime = shaderClock.getElapsedTime().asSeconds();
         //--------------------------------------
         while (window.pollEvent(event)) 
         {
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+
             if (event.type == sf::Event::Closed) //ЗАКРЫВАЕМСЯ
                 window.close();
 
-            if (event.type == sf::Event::MouseButtonPressed) 
+            if (event.type == sf::Event::MouseButtonPressed && !showUpgrades) {
                 if (event.mouseButton.button == sf::Mouse::Left) {
-                    sf::Vector2f mousePos = window.mapPixelToCoords( sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
                     if (buttonRadio.contains(mousePos)) {
                         buttonRadio.onClick();
-                        text1.setString("TK:" + std::to_string(GlobalState::clickCount));//!!!!
+                        text1.setString("TC:" + std::to_string(GlobalState::clickCount));//!!!!
                         text2.setString("DB:" + std::to_string(GlobalState::disassembledCount));//!!!!
                         progressBar.setString(ProgressConvert(buttonRadio.getState()));
                         progressBar.centrHorizontal(600);
-                        scrapCounter.setString("$:"+ std::to_string(GlobalState::scrap));
+                        scrapCounter.setString("$:" + std::to_string(GlobalState::scrap));
                         scrapCounter.centrHorizontal(600);
+                        GlobalState::saveToFile("save.json");
                     }
+                    
                 }
+                
+            }
+            //--------------------------------АПГРЭЙДЫ
+            if (event.type == sf::Event::MouseButtonPressed) {
+                if (event.mouseButton.button == sf::Mouse::Left) {
+                    upgradeButton.handleMousePress(mousePos);
+                }
+            }
+            if (event.type == sf::Event::MouseButtonReleased) {
+                if (event.mouseButton.button == sf::Mouse::Left) {
+                    sf::Vector2f mousePos = window.mapPixelToCoords(
+                        sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+                        
+                    upgradeButton.handleMouseRelease(mousePos, [&showUpgrades]() {
+                        showUpgrades = !showUpgrades;
+                        std::cout << "Меню улучшений: " << (showUpgrades ? "OPEN" : "CLOSE") << std::endl;
+
+                        
+                       });
+                }
+            }
+
+
 
         }
         //--------------------------------------
+        upgradeButton.updateShake();
         
+        if (shaderEnabled && windowShader.isAvailable()) {
+            // Устанавливаем параметры шейдера
+            windowShader.setUniform("texture", sf::Shader::CurrentTexture);
+            windowShader.setUniform("time", currentTime);
+            windowShader.setUniform("resolution", sf::Vector2f(window.getSize()));
+
+            // Рисуем текстуру с шейдером
+            window.draw(renderSprite, &windowShader);
+        }
+        else {
+            // Рисуем текстуру без шейдера
+            window.draw(renderSprite);
+        }
+        renderTexture.clear(sf::Color(30, 30, 30));
+
         //------DRAWS-------
-        buttonRadio.updateShake();
-        text1.update();
-        text2.update();
-        progressBar.update();
-        scrapCounter.update();
-        window.clear(sf::Color(30,30,30));
-        upButton.update(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
-       // window.draw(sph1);
-        text1.draw(window);
-        text2.draw(window);
-        progressBar.draw(window);
-        scrapCounter.draw(window);
-        buttonRadio.draw(window);
-        upButton.draw(window);
+        if (!showUpgrades) {
+            buttonRadio.updateShake();
+            text1.update();
+            text2.update();
+            progressBar.update();
+            scrapCounter.update();
+            //window.clear(sf::Color(30, 30, 30));
+           
+            // window.draw(sph1);
+            text1.draw(window);
+            text2.draw(window);
+            progressBar.draw(window);
+            scrapCounter.draw(window);
+            buttonRadio.draw(window);
+        }
+        else {
+            sf::RectangleShape overlay(sf::Vector2f(window.getSize().x, window.getSize().y));
+            overlay.setFillColor(sf::Color(30, 30, 30)); 
+            window.draw(overlay);
+        }
         //------------------
+        upgradeButton.draw(window);
+        
+
+       
+
+
 
         window.display();
     }

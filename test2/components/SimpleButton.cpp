@@ -1,122 +1,118 @@
 #include "SimpleButton.h"
-
-SimpleButton::SimpleButton() : currentState(NORMAL), isMouseOver(false) {
-    textures.resize(3); // Резервируем место под 3 текстуры
-}
+#include <random>
+#include <iostream>
 
 bool SimpleButton::loadTextures(const std::string& normal, const std::string& hover, const std::string& clicked) {
-    // Загружаем текстуру для нормального состояния
-    if (!textures[NORMAL].loadFromFile(normal)) {
-        std::cout << "Не удалось загрузить текстуру: " << normal << std::endl;
+    textures.resize(3);
+
+    if (!textures[0].loadFromFile(normal)) {
+        std::cout << "Не загружена текстура: " << normal << std::endl;
         return false;
     }
-
-    // Загружаем текстуру для наведения
-    if (!textures[HOVER].loadFromFile(hover)) {
-        std::cout << "Не удалось загрузить текстуру: " << hover << std::endl;
-        // Можно использовать нормальную текстуру как fallback
-        textures[HOVER] = textures[NORMAL];
+    if (!textures[1].loadFromFile(hover)) {
+        std::cout << "Не загружена текстура: " << hover << std::endl;
+        textures[1] = textures[0];
+    }
+    if (!textures[2].loadFromFile(clicked)) {
+        std::cout << "Не загружена текстура: " << clicked << std::endl;
+        textures[2] = textures[1];
     }
 
-    // Загружаем текстуру для клика
-    if (!textures[CLICKED].loadFromFile(clicked)) {
-        std::cout << "Не удалось загрузить текстуру: " << clicked << std::endl;
-        textures[CLICKED] = textures[HOVER]; // Fallback на hover
-    }
-
-    // Устанавливаем начальную текстуру
-    sprite.setTexture(textures[NORMAL]);
-    updateBounds();
-
+    sprite.setTexture(textures[0]);
     return true;
 }
 
-bool SimpleButton::loadTextures(const std::vector<std::string>& texturePaths) {
-    if (texturePaths.size() < 3) {
-        std::cout << "Нужно 3 текстуры: normal, hover, clicked!" << std::endl;
-        return false;
-    }
-
-    return loadTextures(texturePaths[0], texturePaths[1], texturePaths[2]);
-}
-
 void SimpleButton::setPosition(float x, float y) {
-    position = sf::Vector2f(x, y);
-    sprite.setPosition(position);
-    updateBounds();
-}
-
-void SimpleButton::setPosition(const sf::Vector2f& pos) {
-    position = pos;
-    sprite.setPosition(position);
-    updateBounds();
+    originalPos = sf::Vector2f(x, y);
+    sprite.setPosition(x, y);
 }
 
 void SimpleButton::setScale(float scale) {
     sprite.setScale(scale, scale);
-    updateBounds();
-}
-
-void SimpleButton::setScale(float scaleX, float scaleY) {
-    sprite.setScale(scaleX, scaleY);
-    updateBounds();
-}
-
-void SimpleButton::setOnClick(std::function<void()> callback) {
-    onClickCallback = callback;
-}
-
-void SimpleButton::update(const sf::Vector2f& mousePos) {
-    // Проверяем наведение мыши
-    bool wasMouseOver = isMouseOver;
-    isMouseOver = bounds.contains(mousePos);
-
-    // Если мышь только что навелась
-    if (isMouseOver && !wasMouseOver && currentState == NORMAL) {
-        currentState = HOVER;
-        updateTexture();
-    }
-    // Если мышь ушла
-    else if (!isMouseOver && wasMouseOver && currentState == HOVER) {
-        currentState = NORMAL;
-        updateTexture();
-    }
 }
 
 void SimpleButton::draw(sf::RenderWindow& window) {
     window.draw(sprite);
 }
 
-void SimpleButton::handleEvent(const sf::Event& event, const sf::Vector2f& mousePos) {
-    if (event.type == sf::Event::MouseButtonPressed) {
-        if (event.mouseButton.button == sf::Mouse::Left && bounds.contains(mousePos)) {
-            currentState = CLICKED;
-            updateTexture();
+bool SimpleButton::contains(sf::Vector2f point) {
+    return sprite.getGlobalBounds().contains(point);
+}
+
+sf::Vector2f SimpleButton::getPosition() {
+    return sprite.getPosition();
+}
+
+sf::FloatRect SimpleButton::getBounds() {
+    return sprite.getGlobalBounds();
+}
+
+void SimpleButton::handleMousePress(const sf::Vector2f& mousePos) {
+    if (contains(mousePos)) {
+        isPressed = true;
+        updateTexture();
+    }
+}
+
+void SimpleButton::handleMouseRelease(const sf::Vector2f& mousePos, std::function<void()> callback) {
+    if (isPressed && contains(mousePos)) {
+        // Клик завершен успешно
+        startShake();
+        if (callback) {
+            callback();
         }
     }
-    else if (event.type == sf::Event::MouseButtonReleased) {
-        if (event.mouseButton.button == sf::Mouse::Left) {
-            // Если кнопка была нажата и мышь всё ещё над кнопкой - вызываем колбэк
-            if (currentState == CLICKED && bounds.contains(mousePos)) {
-                if (onClickCallback) {
-                    onClickCallback();
-                }
-            }
 
-            // Возвращаем к нормальному состоянию или hover
-            currentState = bounds.contains(mousePos) ? HOVER : NORMAL;
-            updateTexture();
+    isPressed = false;
+    updateTexture();
+}
+
+void SimpleButton::update(const sf::Vector2f& mousePos) {
+    bool wasMouseOver = isMouseOver;
+    isMouseOver = contains(mousePos);
+
+    // Обновляем текстуру только если состояние изменилось
+    if (wasMouseOver != isMouseOver && !isPressed) {
+        updateTexture();
+    }
+}
+
+void SimpleButton::startShake() {
+    if (!isShaking) {
+        isShaking = true;
+        shakeTimer.restart();
+    }
+}
+
+void SimpleButton::updateShake() {
+    if (isShaking) {
+        float elapsed = shakeTimer.getElapsedTime().asSeconds();
+        if (elapsed < shakeDuration) {
+            static std::mt19937 gen(std::random_device{}());
+            std::uniform_real_distribution<float> dis(-shakeIntensity, shakeIntensity);
+
+            float offsetX = dis(gen);
+            float offsetY = dis(gen);
+            sprite.setPosition(originalPos.x + offsetX, originalPos.y + offsetY);
+        }
+        else {
+            isShaking = false;
+            sprite.setPosition(originalPos);
+            updateTexture(); // Восстанавливаем правильную текстуру после тряски
         }
     }
 }
 
 void SimpleButton::updateTexture() {
-    if (currentState >= 0 && currentState < textures.size() &&
-        textures[currentState].getSize().x > 0) {
-        sprite.setTexture(textures[currentState]);
-    }
-}
+    if (isShaking) return; // Не меняем текстуру во время тряски
 
-void SimpleButton::updateBounds() {
-    bounds = sprite.getGlobalBounds();
+    if (isPressed) {
+        sprite.setTexture(textures[2]); // Нажатое состояние
+    }
+    else if (isMouseOver) {
+        sprite.setTexture(textures[1]); // Ховер состояние
+    }
+    else {
+        sprite.setTexture(textures[0]); // Нормальное состояние
+    }
 }

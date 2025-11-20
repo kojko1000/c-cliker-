@@ -1,66 +1,48 @@
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <functional>
 #include <string>
 #include <vector>
-#include <iostream>
 
 class SimpleButton {
-public:
-    enum State {
-        NORMAL = 0,    // Обычное состояние
-        HOVER = 1,     // Наведение мыши
-        CLICKED = 2    // Нажатие
-    };
-
 private:
-    std::vector<sf::Texture> textures; // 0-NORMAL, 1-HOVER, 2-CLICKED
     sf::Sprite sprite;
-    State currentState;
-    bool isMouseOver;
+    std::vector<sf::Texture> textures; // 0-норма, 1-наведение, 2-нажатие
+    sf::Vector2f originalPos;
 
-    // Позиция и размеры
-    sf::Vector2f position;
-    sf::FloatRect bounds;
+    // Состояния
+    bool isMouseOver = false;
+    bool isPressed = false;
 
-    // Колбэк функция при клике
-    std::function<void()> onClickCallback;
+    // Для тряски
+    bool isShaking = false;
+    sf::Clock shakeTimer;
+    float shakeDuration = 0.1f;
+    float shakeIntensity = 3.0f;
 
 public:
-    SimpleButton();
-
-    // Загрузка текстур для всех состояний
+    // Загрузка 3 текстур: норма, ховер, клик
     bool loadTextures(const std::string& normal, const std::string& hover, const std::string& clicked);
 
-    // Альтернативный способ - одним вектором
-    bool loadTextures(const std::vector<std::string>& texturePaths);
-
-    // Установка позиции
+    // Основные методы
     void setPosition(float x, float y);
-    void setPosition(const sf::Vector2f& pos);
-
-    // Установка масштаба
     void setScale(float scale);
-    void setScale(float scaleX, float scaleY);
-
-    // Установка колбэка
-    void setOnClick(std::function<void()> callback);
-
-    // Обновление (вызывать каждый кадр)
-    void update(const sf::Vector2f& mousePos);
-
-    // Отрисовка
     void draw(sf::RenderWindow& window);
+    bool contains(sf::Vector2f point);
+    sf::Vector2f getPosition();
+    sf::FloatRect getBounds();
 
     // Обработка событий мыши
-    void handleEvent(const sf::Event& event, const sf::Vector2f& mousePos);
+    void handleMousePress(const sf::Vector2f& mousePos);
+    void handleMouseRelease(const sf::Vector2f& mousePos, std::function<void()> callback = nullptr);
 
-    // Геттеры
-    State getState() const { return currentState; }
-    sf::Vector2f getPosition() const { return position; }
-    sf::FloatRect getBounds() const { return bounds; }
-    bool isClicked() const { return currentState == CLICKED; }
+    // Обновление состояния
+    void update(const sf::Vector2f& mousePos);
+
+    // Тряска
+    void startShake();
+    void updateShake();
 
 private:
     void updateTexture();
-    void updateBounds();
 };
