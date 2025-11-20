@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClCompile Include="components\Button.cpp" />
     <ClCompile Include="components\GlobalState.cpp" />
+    <ClCompile Include="components\SimpleButton.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +156,7 @@
     <ClInclude Include="components\Button.h" />
     <ClInclude Include="components\GlobalState.h" />
     <ClInclude Include="components\Lable.h" />
+    <ClInclude Include="components\SimpleButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

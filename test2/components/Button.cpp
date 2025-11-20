@@ -26,17 +26,43 @@
 		if (textures.empty()) return;
 		startShake();
 
-		if ((int)state!= (int)(state+ GlobalState::clickCost)){std::cout<<"AAAAAAAAAAAA"; }
+		// ”величиваем scrap при изменении целой части состо€ни€
+		if ((int)state != (int)(state + GlobalState::clickCost)) {
+			GlobalState::scrap++;
+		}
+
 		state = state + GlobalState::clickCost;
-		if (state >= textures.size()/texturePack) {
+
+		// ѕровер€ем, достигли ли мы конца текущего набора текстур
+		if (state >= 4) {
+			// ѕереходим к следующему набору текстур
+			texturePack++;
 			state = 0;
 			GlobalState::disassembledCount++;
+			// ≈сли прошли все наборы текстур, увеличиваем счетчик разобранных деталей
+			if (texturePack >= textures.size() / 4) { // предполага€, что каждый набор имеет 4 текстуры
+				
+				texturePack = 0; // сбрасываем к первому набору
+			}
 		}
-		
-		sprite.setTexture(textures[(int)state*texturePack]);
-		
+
+		// ¬ычисл€ем индекс текстуры: текущее состо€ние + смещение текущего набора
+		int textureIndex = (int)state + (texturePack * 4);
+
+		// «ащита от выхода за границы массива
+		if (textureIndex < textures.size()) {
+			sprite.setTexture(textures[textureIndex]);
+		}
+		else {
+			// ≈сли индекс вне границ, сбрасываем к началу
+			textureIndex = 0;
+			texturePack = 0;
+			state = 0;
+			sprite.setTexture(textures[0]);
+		}
+
+		std::cout << textureIndex << std::endl;
 		GlobalState::clickCount++;
-		//std::cout << "CLICK!!!  " << state <<"     " << (int)state * texturePack << std::endl;
 	}
 
 	
@@ -47,7 +73,8 @@
 
 	sf::Vector2f Button::getPosition()			{return sprite.getPosition();}
 
-	float Button::getState() { return state; }
+	float Button::getState()					{ return state; }
+
 	//_____________SETS__________________
 	void Button::setScale(float scale)			{Button::sprite.setScale(scale, scale);}
 

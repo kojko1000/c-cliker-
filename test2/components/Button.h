@@ -8,7 +8,8 @@ class Button {
 private:
     std::vector<sf::Texture> textures;
     sf::Sprite sprite;
-    int texturePack = 1;
+    int texturePack = 0;
+    int texturePacks = 1;
     float state = 0;
 
     //_____для тряски____

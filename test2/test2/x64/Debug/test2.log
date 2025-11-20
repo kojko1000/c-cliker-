@@ -1,9 +1,20 @@
 ﻿  main.cpp
-D:\c++\проекты\test2\components\Button.h(18,27): warning C4305: инициализация: усечение из "double" в "float"
+D:\c++\проекты\test2\components\Button.h(19,27): warning C4305: инициализация: усечение из "double" в "float"
   (компиляция исходного файла "main.cpp")
   
 D:\c++\проекты\test2\components\Lable.h(65,26): warning C4244: =: преобразование "float" в "sf::Uint8", возможна потеря данных
   (компиляция исходного файла "main.cpp")
   
-D:\c++\проекты\test2\main.cpp(101,18): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+D:\c++\проекты\test2\main.cpp(111,76): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+D:\c++\проекты\test2\main.cpp(111,76): warning C4244:         with
+D:\c++\проекты\test2\main.cpp(111,76): warning C4244:         [
+D:\c++\проекты\test2\main.cpp(111,76): warning C4244:             T=float
+D:\c++\проекты\test2\main.cpp(111,76): warning C4244:         ]
+D:\c++\проекты\test2\main.cpp(111,55): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+D:\c++\проекты\test2\main.cpp(111,55): warning C4244:         with
+D:\c++\проекты\test2\main.cpp(111,55): warning C4244:         [
+D:\c++\проекты\test2\main.cpp(111,55): warning C4244:             T=float
+D:\c++\проекты\test2\main.cpp(111,55): warning C4244:         ]
+D:\c++\проекты\test2\main.cpp(130,18): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+D:\c++\проекты\test2\main.cpp(136,12): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
   test2.vcxproj -> D:\c++\проекты\test2\x64\Debug\test2.exe
