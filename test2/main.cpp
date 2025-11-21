@@ -90,6 +90,19 @@ int main()
     scrapCounter.setPosition(0,0);
     scrapCounter.centrHorizontal(600);
     scrapCounter.startBlinking();
+
+    Label scrapBonus;
+    if (!scrapBonus.loadFont("fonts/USSR STENCIL WEBFONT.ttf")) return -1;
+    scrapBonus.setColor(sf::Color::Green);
+    scrapBonus.setPosition(0, 200);
+    scrapBonus.centrHorizontal(600);
+    scrapBonus.startBlinking();
+
+    Label critBonus;
+    if (!critBonus.loadFont("fonts/USSR STENCIL WEBFONT.ttf")) return -1;
+    critBonus.setColor(sf::Color::Green);
+    critBonus.setPosition(300, 175);
+    critBonus.startBlinking();
     //-------
  
     //----shit---
@@ -170,6 +183,10 @@ int main()
         //------DRAWS-------
         if (!showUpgrades) {
             buttonRadio.updateShake();
+            buttonRadio.updateScrapBonus();
+            buttonRadio.updateCritBonus();
+            scrapBonus.update();
+            critBonus.update();
             text1.update();
             text2.update();
             progressBar.update();
@@ -177,6 +194,19 @@ int main()
             //window.clear(sf::Color(30, 30, 30));
            
             // window.draw(sph1);
+            if (buttonRadio.getIsScrapBonus()) {
+                scrapBonus.setString("Double scrap!!!");
+                scrapBonus.draw(window);
+            }
+            else
+                scrapBonus.setString("");
+            if (buttonRadio.getIsCritBonus()) {
+                critBonus.setString("Click click!!!");
+                critBonus.draw(window);
+            }
+            else
+                critBonus.setString("");
+
             text1.draw(window);
             text2.draw(window);
             progressBar.draw(window);

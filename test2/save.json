@@ -1,6 +1,8 @@
 {
   "clickCost": 0.500000,
-  "disassembledCount": 219,
-  "clickCount": 1820,
-  "scrap": 1202
+  "critChans": 60,
+  "scrapCritChans": 60,
+  "disassembledCount": 129,
+  "clickCount": 691,
+  "scrap": 843
 }

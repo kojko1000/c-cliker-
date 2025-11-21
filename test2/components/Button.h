@@ -18,6 +18,13 @@ private:
     sf::Clock shakeTimer;
     float shakeDuration = 0.1;
     float shakeIntensity = 5.0;
+    //_____для бонусов
+    float bonusDuration = 0.1;
+    bool isScrapBonus = false;
+    sf::Clock scrapBonusTimer;
+    bool isCritBonus = false;
+    sf::Clock critBonusTimer;
+
 
     //типо ивет
     //ИВЕНТА НЕ БУДЕТ!
@@ -34,10 +41,16 @@ public:
     //гетеры
     sf::FloatRect getBounds();
     sf::Vector2f getPosition();
+    bool getIsScrapBonus();
+    bool getIsCritBonus();
     float getState();
     //для тряски-----------
     void startShake();
     void updateShake();
-    //типо ивет
+    //таймеры для бонусов
+    void startScrapBonus();
+    void updateScrapBonus();
+    void startCritBonus();
+    void updateCritBonus();
     //ИВЕНТА НЕ БУДЕТ!
 };

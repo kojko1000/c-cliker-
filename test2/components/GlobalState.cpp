@@ -4,6 +4,8 @@
 
 // Инициализация статических переменных
 float GlobalState::clickCost = 0.5;
+int GlobalState::critChans = 0;
+int GlobalState::scrapCritChans = 60;
 int GlobalState::disassembledCount = 0;
 int GlobalState::clickCount = 0;
 int GlobalState::scrap = 0;
@@ -51,6 +53,8 @@ std::string GlobalState::toJsonString() {
     // Простой JSON без внешних библиотек
     std::string json = "{\n";
     json += "  \"clickCost\": " + std::to_string(clickCost) + ",\n";
+    json += "  \"critChans\": " + std::to_string(critChans) + ",\n";
+    json += "  \"scrapCritChans\": " + std::to_string(scrapCritChans) + ",\n";
     json += "  \"disassembledCount\": " + std::to_string(disassembledCount) + ",\n";
     json += "  \"clickCount\": " + std::to_string(clickCount) + ",\n";
     json += "  \"scrap\": " + std::to_string(scrap) + "\n";
@@ -70,6 +74,22 @@ bool GlobalState::fromJsonString(const std::string& jsonStr) {
             size_t end = jsonStr.find(",", pos);
             std::string value = jsonStr.substr(pos, end - pos);
             clickCost = std::stof(value);
+        }
+
+        pos = jsonStr.find("\"critChans\":");
+        if (pos != std::string::npos) {
+            pos = jsonStr.find(":", pos) + 1;
+            size_t end = jsonStr.find(",", pos);
+            std::string value = jsonStr.substr(pos, end - pos);
+            critChans = std::stoi(value);
+        }
+
+        pos = jsonStr.find("\"scrapCritChans\":");
+        if (pos != std::string::npos) {
+            pos = jsonStr.find(":", pos) + 1;
+            size_t end = jsonStr.find(",", pos);
+            std::string value = jsonStr.substr(pos, end - pos);
+            scrapCritChans = std::stoi(value);
         }
 
         // Парсим disassembledCount
@@ -112,4 +132,6 @@ void GlobalState::reset() {
     disassembledCount = 0;
     clickCount = 0;
     scrap = 0;
+    critChans = 0;
+    scrapCritChans = 0;
 }

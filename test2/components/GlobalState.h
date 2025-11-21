@@ -4,9 +4,12 @@
 class GlobalState {
 public:
     static float clickCost;
+    static int critChans;
+    static int scrapCritChans;
     static int disassembledCount;
     static int clickCount;
     static int scrap;
+  
 
     // Функции для работы с JSON
     static bool saveToFile(const std::string& filename = "save.json");

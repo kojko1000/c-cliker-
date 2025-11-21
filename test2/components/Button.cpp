@@ -25,13 +25,47 @@
 	void Button::onClick() {
 		if (textures.empty()) return;
 		startShake();
+		static std::mt19937 gen(std::random_device{}());
+		std::uniform_real_distribution<float> dis(0, 100);
+		float critChance = dis(gen);
+
+		
 
 		// Увеличиваем scrap при изменении целой части состояния
+		
 		if ((int)state != (int)(state + GlobalState::clickCost)) {
 			GlobalState::scrap++;
-		}
 
+		
+			float scrapChance = dis(gen);
+			
+			if ((float)GlobalState::scrapCritChans >= scrapChance) 
+			{
+				GlobalState::scrap++;
+				startScrapBonus();
+			}
+		}
 		state = state + GlobalState::clickCost;
+		if ((float)GlobalState::critChans >= critChance)
+		{
+			startCritBonus();
+			shakeIntensity = shakeIntensity * 2;
+
+			if ((int)state != (int)(state + GlobalState::clickCost)) {
+				GlobalState::scrap++;
+
+
+				float scrapChance = dis(gen);
+
+				if ((float)GlobalState::scrapCritChans >= scrapChance)
+				{
+					GlobalState::scrap++;
+					startScrapBonus();
+				}
+			}
+
+			state = state + GlobalState::clickCost;
+		}
 
 		// Проверяем, достигли ли мы конца текущего набора текстур
 		if (state >= 4) {
@@ -105,6 +139,43 @@
 			{
 				isShaking = false;
 				sprite.setPosition(originalPos);
+			}
+		}
+	}
+	//Бонусы
+	bool Button::getIsScrapBonus() { return isScrapBonus;}
+
+	void Button::startScrapBonus() {
+		if (!isScrapBonus) {
+			isScrapBonus = true;
+			scrapBonusTimer.restart();
+		}
+	}
+
+	void Button::updateScrapBonus(){
+		if (isScrapBonus) {
+			float elapsed = scrapBonusTimer.getElapsedTime().asSeconds();
+			if (elapsed > bonusDuration)
+				isScrapBonus = false;
+			
+		}
+	}
+	//Бонусы
+	bool Button::getIsCritBonus() { return isCritBonus; }
+
+	void Button::startCritBonus() {
+		if (!isCritBonus) {
+			isCritBonus = true;
+			critBonusTimer.restart();
+		}
+	}
+
+	void Button::updateCritBonus() {
+		if (isCritBonus) {
+			float elapsed = critBonusTimer.getElapsedTime().asSeconds();
+			if (elapsed > bonusDuration) {
+				isCritBonus = false;
+				shakeIntensity = shakeIntensity / 2;
 			}
 		}
 	}

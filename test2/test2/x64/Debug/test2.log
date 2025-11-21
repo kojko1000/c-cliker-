@@ -1,29 +1,8 @@
-﻿  main.cpp
+﻿  Button.cpp
 D:\c++\проекты\test2\components\Button.h(19,27): warning C4305: инициализация: усечение из "double" в "float"
-  (компиляция исходного файла "main.cpp")
+  (компиляция исходного файла "components/Button.cpp")
   
-D:\c++\проекты\test2\components\Lable.h(65,26): warning C4244: =: преобразование "float" в "sf::Uint8", возможна потеря данных
-  (компиляция исходного файла "main.cpp")
+D:\c++\проекты\test2\components\Button.h(22,27): warning C4305: инициализация: усечение из "double" в "float"
+  (компиляция исходного файла "components/Button.cpp")
   
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-D:\c++\проекты\test2\main.cpp(187,89): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-D:\c++\проекты\test2\main.cpp(187,89): warning C4244:         with
-D:\c++\проекты\test2\main.cpp(187,89): warning C4244:         [
-D:\c++\проекты\test2\main.cpp(187,89): warning C4244:             T=unsigned int
-D:\c++\проекты\test2\main.cpp(187,89): warning C4244:         ]
-D:\c++\проекты\test2\main.cpp(187,89): warning C4244:         and
-D:\c++\проекты\test2\main.cpp(187,89): warning C4244:         [
-D:\c++\проекты\test2\main.cpp(187,89): warning C4244:             T=float
-D:\c++\проекты\test2\main.cpp(187,89): warning C4244:         ]
-D:\c++\проекты\test2\main.cpp(187,69): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-D:\c++\проекты\test2\main.cpp(187,69): warning C4244:         with
-D:\c++\проекты\test2\main.cpp(187,69): warning C4244:         [
-D:\c++\проекты\test2\main.cpp(187,69): warning C4244:             T=unsigned int
-D:\c++\проекты\test2\main.cpp(187,69): warning C4244:         ]
-D:\c++\проекты\test2\main.cpp(187,69): warning C4244:         and
-D:\c++\проекты\test2\main.cpp(187,69): warning C4244:         [
-D:\c++\проекты\test2\main.cpp(187,69): warning C4244:             T=float
-D:\c++\проекты\test2\main.cpp(187,69): warning C4244:         ]
-D:\c++\проекты\test2\main.cpp(208,18): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-D:\c++\проекты\test2\main.cpp(214,12): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
   test2.vcxproj -> D:\c++\проекты\test2\x64\Debug\test2.exe
