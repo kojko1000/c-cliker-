@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\save.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:save.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\UpgraidButton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\UpgraidButton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\SimpleButton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\SimpleButton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\assets\\shaders\\wave.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:assets\\shaders\\wave.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\assets\\Radio1.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:assets\\Radio1.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\GlobalState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -27,26 +31,30 @@
       "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\GlobalState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Lable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\Lable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\save.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:save.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.42.34433\\INCLUDE\\RANDOM||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Lable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\Lable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\SimpleButton.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\SimpleButton.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\SimpleButton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9EC5DDAD-5E76-41ED-9505-FA9C07851DD4}|test2.vcxproj|solutionrelative:components\\SimpleButton.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\assets\\shaders\\wave.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\shaders\\wave.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\random||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,47 +64,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "UpgraidButton.h",
+              "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\UpgraidButton.h",
+              "RelativeDocumentMoniker": "components\\UpgraidButton.h",
+              "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\UpgraidButton.h",
+              "RelativeToolTip": "components\\UpgraidButton.h",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-21T11:40:36.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "save.json",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\save.json",
               "RelativeDocumentMoniker": "save.json",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\save.json",
               "RelativeToolTip": "save.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-21T06:53:46.431Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "random",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\random",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\random",
               "ViewState": "AgIAAIwMAAAAAAAAAAAswJYMAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-21T06:45:12.88Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T06:45:12.88Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "wave.frag",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\assets\\shaders\\wave.frag",
               "RelativeDocumentMoniker": "assets\\shaders\\wave.frag",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\assets\\shaders\\wave.frag",
               "RelativeToolTip": "assets\\shaders\\wave.frag",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-20T13:47:04.1Z"
+              "WhenOpened": "2025-11-20T13:47:04.1Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "vector",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
@@ -106,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "SimpleButton.cpp",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\SimpleButton.cpp",
               "RelativeDocumentMoniker": "components\\SimpleButton.cpp",
@@ -118,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "SimpleButton.h",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\SimpleButton.h",
               "RelativeDocumentMoniker": "components\\SimpleButton.h",
@@ -126,11 +147,12 @@
               "RelativeToolTip": "components\\SimpleButton.h",
               "ViewState": "AgIAAAsAAAAAAAAAAAAmwB8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-19T14:10:18.166Z"
+              "WhenOpened": "2025-11-19T14:10:18.166Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "GlobalState.h",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\GlobalState.h",
               "RelativeDocumentMoniker": "components\\GlobalState.h",
@@ -143,20 +165,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "GlobalState.cpp",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\GlobalState.cpp",
               "RelativeDocumentMoniker": "components\\GlobalState.cpp",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\GlobalState.cpp",
               "RelativeToolTip": "components\\GlobalState.cpp",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAE4AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-18T14:02:47.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Lable.h",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Lable.h",
               "RelativeDocumentMoniker": "components\\Lable.h",
@@ -164,12 +186,11 @@
               "RelativeToolTip": "components\\Lable.h",
               "ViewState": "AgIAAC0AAAAAAAAAAAAswEEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-17T06:06:14.75Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T06:06:14.75Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Button.h",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.h",
               "RelativeDocumentMoniker": "components\\Button.h",
@@ -177,33 +198,44 @@
               "RelativeToolTip": "components\\Button.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-14T13:57:21.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T13:57:21.951Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Button.cpp",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.cpp",
               "RelativeDocumentMoniker": "components\\Button.cpp",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\components\\Button.cpp",
               "RelativeToolTip": "components\\Button.cpp",
-              "ViewState": "AgIAABwAAAAAAAAAAAAwwCgAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAwwCoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-14T11:47:52.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAAAKoAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAIAwwLQAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-13T12:58:15.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Radio1.png",
+              "DocumentMoniker": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\assets\\Radio1.png",
+              "RelativeDocumentMoniker": "assets\\Radio1.png",
+              "ToolTip": "D:\\c\u002B\u002B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\test2\\assets\\Radio1.png",
+              "RelativeToolTip": "assets\\Radio1.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-11-21T12:48:40.442Z",
               "EditorCaption": ""
             }
           ]

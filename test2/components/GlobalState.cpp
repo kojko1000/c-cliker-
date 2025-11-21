@@ -3,9 +3,9 @@
 #include <iostream>
 
 // Инициализация статических переменных
-float GlobalState::clickCost = 0.5;
+float GlobalState::clickCost = 0.04;
 int GlobalState::critChans = 0;
-int GlobalState::scrapCritChans = 60;
+int GlobalState::scrapCritChans = 0;
 int GlobalState::disassembledCount = 0;
 int GlobalState::clickCount = 0;
 int GlobalState::scrap = 0;
@@ -128,7 +128,7 @@ bool GlobalState::fromJsonString(const std::string& jsonStr) {
 }
 
 void GlobalState::reset() {
-    clickCost = 0.5;
+    clickCost = 0.02;
     disassembledCount = 0;
     clickCount = 0;
     scrap = 0;

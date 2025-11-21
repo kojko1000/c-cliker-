@@ -4,7 +4,12 @@
 #include "components/Lable.h"
 #include "components/GlobalState.h"
 #include <filesystem>
+#include "components/UpgraidButton.h"
+#include <sstream>
+#include <iomanip>
 std::string ProgressConvert(float state);
+void CastilProstoSamiyTypoiCastilNoMneTakLenStrukturyProektaPeredelvatChtoDaYetoSmiyHoroshiyVariant(UpButton button, std::string text);
+std::string formatFloat(float number);
 
 int main()
 {
@@ -58,7 +63,47 @@ int main()
 
     upgradeButton.setPosition(515, 10); // Позиция в правом верхнем углу
     upgradeButton.setScale(5);
+    //улушеня ёу
 
+      // СОЗДАЕМ КНОПКИ ВЕЛИКОГО КИТАЯ
+    UpButton chinaButton1;
+    UpButton chinaButton2;
+    UpButton chinaButton3;
+    UpButton chinaButton4;
+
+    chinaButton1.create(150, 50, 300, 100, "quality");
+    chinaButton2.create(150, 200, 300, 100, "critical\n click");
+    chinaButton3.create(150, 350, 300, 100, "scrap\nbonus");
+    chinaButton4.create(540, 540, 50, 50, "RT");
+
+    
+    chinaButton1.setOnClick([]() {
+        int cost = (int)(GlobalState::clickCost * 100);
+        if (GlobalState::clickCost < 0.5 && GlobalState::scrap >= cost) {
+            GlobalState::scrap = GlobalState::scrap - cost;
+            GlobalState::clickCost += 0.02;
+        }
+        });
+
+    chinaButton2.setOnClick([]() {
+        
+        int cost = (int)((GlobalState::critChans +1) * 2);
+        if (GlobalState::critChans < 100&& GlobalState::scrap >= cost) {
+            GlobalState::scrap = GlobalState::scrap - cost;
+            GlobalState::critChans += 4;
+        }
+        });
+
+    chinaButton3.setOnClick([]() {
+        int cost = (int)((GlobalState::scrapCritChans + 1) * 3);
+         if (GlobalState::scrapCritChans < 100 && GlobalState::scrap >= cost) {
+             GlobalState::scrap = GlobalState::scrap - cost;
+             GlobalState::scrapCritChans += 4;
+        }
+        });
+    chinaButton4.setOnClick([]() {
+        GlobalState::reset();
+        });
 
     //-----TEXT_COUNTER----
     Label text1;
@@ -158,7 +203,20 @@ int main()
                        });
                 }
             }
-
+            if (showUpgrades) 
+            {
+                chinaButton1.handleEvent(event, mousePos);
+                chinaButton2.handleEvent(event, mousePos);
+                chinaButton3.handleEvent(event, mousePos);
+                chinaButton4.handleEvent(event, mousePos);
+                text1.setString("TC:" + std::to_string(GlobalState::clickCount));//!!!!
+                text2.setString("DB:" + std::to_string(GlobalState::disassembledCount));//!!!!
+                progressBar.setString(ProgressConvert(buttonRadio.getState()));
+                progressBar.centrHorizontal(600);
+                scrapCounter.setString("$:" + std::to_string(GlobalState::scrap));
+                scrapCounter.centrHorizontal(600);
+                
+            }
 
 
         }
@@ -214,9 +272,49 @@ int main()
             buttonRadio.draw(window);
         }
         else {
+
             sf::RectangleShape overlay(sf::Vector2f(window.getSize().x, window.getSize().y));
             overlay.setFillColor(sf::Color(30, 30, 30)); 
             window.draw(overlay);
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+            chinaButton1.update(mousePos);
+            chinaButton2.update(mousePos);
+            chinaButton3.update(mousePos);
+            chinaButton4.update(mousePos);
+            //-----1
+            std::string clickCost = "click: ";
+            if (GlobalState::clickCost < 0.5)  
+                clickCost += formatFloat(GlobalState::clickCost) + "\n"+ formatFloat(GlobalState::clickCost+0.02) +" = " + std::to_string( (int)(GlobalState::clickCost*100))+"-$";
+            else
+                clickCost += formatFloat(GlobalState::clickCost) + "\nMAX";
+            chinaButton1.setButtonText(clickCost);
+            chinaButton1.centerText();
+            //------1
+            //------2
+            std::string dclc = "DBclick: ";
+            if (GlobalState::critChans < 100)
+                dclc += formatFloat(GlobalState::critChans)+"%" + "\n" + formatFloat(GlobalState::critChans + 4) + "% = " + std::to_string((int)((GlobalState::critChans + 1) * 2)) + "-$";
+            else
+                dclc += formatFloat(GlobalState::critChans) + "\nMAX";
+            chinaButton2.setButtonText(dclc);
+            chinaButton2.centerText();
+            //------2
+            //------3
+            std::string dscc = "DBScrap$: ";
+            if (GlobalState::scrapCritChans < 100)
+                dscc += formatFloat(GlobalState::scrapCritChans) + "%" + "\n" + formatFloat(GlobalState::scrapCritChans + 4) + "% = " + std::to_string((int)((GlobalState::scrapCritChans + 1) * 3)) + "-$";
+            else
+                dscc += formatFloat(GlobalState::scrapCritChans) + "\nMAX";
+            chinaButton3.setButtonText(dscc);
+            chinaButton3.centerText();
+            //------3
+            scrapCounter.update();
+
+            chinaButton1.draw(window);
+            chinaButton2.draw(window);
+            chinaButton3.draw(window);
+            chinaButton4.draw(window);
+            scrapCounter.draw(window);
         }
         //------------------
         upgradeButton.draw(window);
@@ -246,4 +344,26 @@ std::string ProgressConvert(float state) {
     bar += std::to_string(pr) + '%';
     //std::cout << bar << std::endl;
     return bar ;
+}
+void CastilProstoSamiyTypoiCastilNoMneTakLenStrukturyProektaPeredelvatChtoDaYetoSmiyHoroshiyVariant(UpButton button,std::string text) {
+    button.setButtonText(text);
+}
+std::string formatFloat(float number ) {
+    int precision = 2;
+    std::stringstream stream;
+    stream << std::fixed << std::setprecision(precision) << number;
+    std::string result = stream.str();
+
+    // Убираем лишние нули после запятой
+    size_t dotPos = result.find('.');
+    if (dotPos != std::string::npos) {
+        // Удаляем нули с конца
+        result = result.substr(0, result.find_last_not_of('0') + 1);
+        // Если после запятой ничего не осталось, удаляем и запятую
+        if (result.back() == '.') {
+            result.pop_back();
+        }
+    }
+
+    return result;
 }

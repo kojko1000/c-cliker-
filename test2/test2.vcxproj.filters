@@ -55,5 +55,8 @@
     <ClInclude Include="components\SimpleButton.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="components\UpgraidButton.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
