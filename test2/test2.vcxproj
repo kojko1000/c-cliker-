@@ -140,6 +140,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\shaders\wave.frag" />
     <None Include="openal32.dll" />
     <None Include="save.json" />
     <None Include="sfml-audio-2.dll" />
@@ -159,6 +160,19 @@
     <ClInclude Include="components\Lable.h" />
     <ClInclude Include="components\SimpleButton.h" />
     <ClInclude Include="components\UpgraidButton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\ButtonApp\выделено.png" />
+    <Image Include="assets\ButtonApp\нажато.png" />
+    <Image Include="assets\ButtonApp\пасивно.png" />
+    <Image Include="assets\Radio1.png" />
+    <Image Include="assets\Radio2.png" />
+    <Image Include="assets\Radio3.png" />
+    <Image Include="assets\Radio4.png" />
+    <Image Include="assets\TV1.png" />
+    <Image Include="assets\TV2.png" />
+    <Image Include="assets\TV3.png" />
+    <Image Include="assets\TV4.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

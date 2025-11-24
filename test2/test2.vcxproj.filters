@@ -41,6 +41,7 @@
     <None Include="sfml-window-2.dll" />
     <None Include="sfml-window-d-2.dll" />
     <None Include="save.json" />
+    <None Include="assets\shaders\wave.frag" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="components\Button.h">
@@ -58,5 +59,40 @@
     <ClInclude Include="components\UpgraidButton.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\Radio1.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\Radio2.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\Radio3.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\Radio4.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\TV1.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\TV2.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\TV3.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\TV4.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\ButtonApp\выделено.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\ButtonApp\нажато.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\ButtonApp\пасивно.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
   </ItemGroup>
 </Project>

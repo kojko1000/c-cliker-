@@ -13,8 +13,14 @@ std::string formatFloat(float number);
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(600, 600), "It's WIN!");
+    sf::RenderWindow window(sf::VideoMode(600, 600), "ParsingCl");
     GlobalState::loadFromFile("save.json");
+    sf::Image icon;
+    if (!icon.loadFromFile("assets/icon.png")) {
+        // Handle the error if the image fails to load
+        return -1;
+    }
+    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     //---- ьеидеп дкъ бяецн нймю ----
     sf::Shader windowShader;
